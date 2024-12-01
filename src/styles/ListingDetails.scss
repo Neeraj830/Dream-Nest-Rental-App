@@ -1,0 +1,160 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.listing-details {
+  padding: 40px 20px 120px;
+  margin-top: 75px;
+
+  @include xl {
+    padding: 40px 20px 120px;
+  }
+
+  @include lg {
+    padding: 40px 10px 120px;
+  }
+
+  @include sm {
+    padding: 40px 10px 120px;
+  }
+  @include xs {
+    padding: 40px 10px 120px;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include sm {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    h1 {
+      @include sm {
+        font-size: 22px;
+      }
+    }
+
+    .save {
+      display: flex;
+      align-items: center;
+      grid-row-gap: 2em;
+      grid-column-gap: 2em;
+      cursor: pointer;
+
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+      }
+    }
+  }
+
+  .photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img {
+      width: 300px;
+      max-height: 250px;
+      margin: 10px;
+    }
+  }
+
+  hr {
+    margin: 20px 0;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+      border-radius: 50px;
+    }
+  }
+
+  p {
+    max-width: 800px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .booking {
+    display: flex;
+    justify-content: space-between;
+
+    @include lg {
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .amenities {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 100px;
+      margin: 30px 0;
+      max-width: 700px;
+
+      @include sm {
+        grid-column-gap: 20px;
+      }
+
+      .facility {
+        display: flex;
+        align-items: center;
+
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        @include xs {
+          font-size: 16px;
+        }
+
+        &_icon {
+          font-size: 30px;
+          padding-right: 10px;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .date-range-calendar {
+      margin: 30px 0;
+      width: 100% !important;
+
+      .picker {
+        @include xs {
+          width: 100%;
+        }
+      }
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      .button {
+        margin-top: 30px;
+
+        @include buttonStyle;
+        width: auto;
+
+        &:hover {
+          box-shadow: 0 0 10px 3px rgba(255, 255, 255);
+        }
+
+        @include lg {
+          max-width: 300px;
+        }
+      }
+    }
+  }
+}

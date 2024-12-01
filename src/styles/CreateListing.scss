@@ -1,0 +1,457 @@
+@import "../styles/variables.scss";
+@import "../styles/breakpoints.scss";
+
+.create-listing {
+  background-color: $lightgrey;
+  padding: 40px 20px 120px;
+  margin-top: 75px;
+
+  .createLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(192, 192, 192, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include mm {
+    padding: 40px 10px 120px;
+  }
+
+  h1 {
+    color: $blue;
+    font-size: 25px;
+  }
+
+  &_step1 {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+
+    @include sm {
+      padding: 30px 20px;
+    }
+
+    h2 {
+      color: $pinkred;
+    }
+
+    hr {
+      margin: 15px 0 25px;
+    }
+
+    h3 {
+      margin: 40px 0 20px;
+      color: $blue;
+    }
+
+    .category-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 20px;
+
+      @include lg {
+        padding: 0 20px;
+      }
+
+      @include md {
+        padding: 0;
+      }
+
+      .category {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 90px;
+        border: 1px solid $grey;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s ease;
+        margin: 15px;
+
+        &_icon {
+          font-size: 30px;
+          color: black;
+        }
+
+        p {
+          font-weight: 600;
+          text-align: center;
+          color: black;
+          font-size: 15px;
+        }
+
+        &:hover {
+          border: 2px solid $pinkred;
+          background-color: $lightgrey;
+        }
+      }
+
+      .selected {
+        border: 2px solid $pinkred;
+        background-color: $lightgrey;
+      }
+    }
+
+    .type-list {
+      display: flex;
+      flex-direction: column;
+
+      .type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 600px;
+        padding: 15px 30px;
+        border: 1px solid $grey;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        margin-bottom: 30px;
+
+        &_text {
+          max-width: 400px;
+
+          h4 {
+            margin-bottom: 5px;
+          }
+        }
+
+        &_icon {
+          font-size: 30px;
+        }
+
+        &:hover {
+          border: 2px solid $pinkred;
+          background-color: $lightgrey;
+        }
+      }
+
+      .selected {
+        border: 2px solid $pinkred;
+        background-color: $lightgrey;
+      }
+    }
+
+    .full {
+      max-width: 700px;
+    }
+
+    .half {
+      max-width: 700px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 2em;
+      column-gap: 2em;
+
+      @include ml {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2em;
+        column-gap: 2em;
+      }
+    }
+
+    .location {
+      p {
+        font-weight: 700;
+        margin: 20px 0 10px;
+      }
+      input {
+        border: 1px solid $grey;
+        padding: 15px 10px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+      select {
+        border: 1px solid $grey;
+        padding: 15px 15px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .basics {
+      display: flex;
+      flex-wrap: wrap;
+
+      .basic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        border: 1px solid $grey;
+        border-radius: 10px;
+        margin: 10px;
+
+        p {
+          font-weight: 600;
+          margin: 0px 10px;
+        }
+
+        &_count {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  &_step2 {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+
+    @include sm {
+      padding: 30px 20px;
+    }
+
+    h2 {
+      color: $pinkred;
+    }
+
+    hr {
+      margin: 15px 0 25px;
+    }
+
+    h3 {
+      margin: 40px 0 20px;
+      color: $blue;
+    }
+
+    .amenities {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .facility {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 90px;
+        border: 1px solid $grey;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s ease;
+        margin: 5px;
+
+        @include sm {
+          width: 140px;
+        }
+
+        &_icon {
+          font-size: 30px;
+        }
+
+        p {
+          font-weight: 600;
+          text-align: center;
+        }
+
+        &:hover {
+          border: 2px solid $pinkred;
+          background-color: $lightgrey;
+        }
+      }
+
+      .selected {
+        border: 2px solid $pinkred;
+        background-color: $lightgrey;
+      }
+    }
+
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+
+      .photo {
+        position: relative;
+        max-width: 300px;
+        max-height: 250px;
+        cursor: move;
+        margin: 10px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        button {
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 3px;
+          border: none;
+          background-color: rgba(255, 255, 255, 0.8);
+          font-size: 20px;
+          cursor: pointer;
+
+          &:hover {
+            color: $pinkred;
+          }
+        }
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border: 1px dashed $grey;
+
+        .icon {
+          font-size: 60px;
+        }
+
+        p {
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+
+      .together {
+        width: 250px;
+        height: 150px;
+      }
+
+      .alone {
+        padding: 40px 100px;
+        border-radius: 10px;
+
+        @include mm {
+          padding: 40px 80px;
+        }
+
+        @include sm {
+          padding: 40px 30px;
+        }
+      }
+    }
+
+    .title {
+      input {
+        border: 1px solid $grey;
+        padding: 15px 10px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .description {
+      p {
+        font-weight: 700;
+        margin: 20px 0 10px;
+      }
+
+      input {
+        border: 1px solid $grey;
+        padding: 15px 10px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 600px;
+
+        @include ml {
+          width: 450px;
+        }
+
+        @include md {
+          width: 350px;
+        }
+
+        @include sm {
+          width: 280px;
+        }
+        @include xs {
+          width: 250px;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+      textarea {
+        border: 1px solid $grey;
+        padding: 15px 10px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 600px;
+        height: 100px;
+
+        @include ml {
+          width: 450px;
+        }
+
+        @include md {
+          width: 350px;
+        }
+
+        @include sm {
+          width: 280px;
+        }
+        @include xs {
+          width: 250px;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      span {
+        font-size: 25px;
+        font-weight: 700;
+        margin-right: 20px;
+      }
+
+      .price {
+        width: 200px;
+      }
+    }
+  }
+
+  .submit_btn {
+    margin-top: 40px;
+    margin-left: 20px;
+
+    @include buttonStyle;
+
+    &:hover {
+      box-shadow: 0 0 10px 3px rgb(117, 117, 117);
+    }
+  }
+}
